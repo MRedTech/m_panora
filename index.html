@@ -7,10 +7,10 @@
   
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://mredtech01.edreborn86.workers.dev" crossorigin>
-  <link rel="dns-prefetch" href="//mredtech01.edreborn86.workers.dev">
-  <link rel="preconnect" href="https://secure-entry-vision01.edreborn86.workers.dev" crossorigin>
-  <link rel="dns-prefetch" href="//secure-entry-vision01.edreborn86.workers.dev">
+  <link rel="preconnect" href="https://m-panora.edreborn86.workers.dev" crossorigin>
+  <link rel="dns-prefetch" href="//m-panora.edreborn86.workers.dev">
+  <link rel="preconnect" href="https://secure-entry-vision06.edreborn86.workers.dev" crossorigin>
+  <link rel="dns-prefetch" href="//secure-entry-vision06.edreborn86.workers.dev">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
@@ -830,7 +830,7 @@
   <div class="search-minicard">
     <div class="search-mini-title">
       <span class="search-emoji">🔍</span>
-      <span>SEARCH RECORD | SENSORY</span>
+      <span>SEARCH RECORD | M PANORA</span>
     </div>
     <input id="searchUniversal" type="text" placeholder="MYKAD / PASSPORT / REG NO" autocomplete="off" class="search-mini-input" style="font-weight:bold;">
     <button id="searchButton" class="btn-3d search-mini-btn" type="button" onclick="handleUniversalSearch()">SEARCH</button>
@@ -843,7 +843,7 @@
 
   <div class="image-container" id="imageContainer">
     <img id="preview" src="#" alt="IMAGE PREVIEW">
-    <div class="watermark">SENSORY USE ONLY</div>
+    <div class="watermark">M PANORA USE ONLY</div>
   </div>
 
   <form id="registrationForm" autocomplete="off">
@@ -883,13 +883,13 @@
       <option value="LAZADA">LAZADA</option>
       <option value="MCD FOOD DELIVERY">MCD FOOD DELIVERY</option>
       <option value="NINJA VAN">NINJA VAN</option>
-      <option value="OWNER">OWNER</option>
+      <option value="OWNER" hidden>OWNER</option>
       <option value="POS LAJU">POS LAJU</option>
       <option value="RESTAURANT DELIVERY">RESTAURANT DELIVERY</option>
       <option value="SHOPEE EXPRESS">SHOPEE EXPRESS</option>
       <option value="SHOPEE FOOD">SHOPEE FOOD</option>
       <option value="SKYNET">SKYNET</option>
-      <option value="TENANT">TENANT</option>
+      <option value="TENANT" hidden>TENANT</option>
       <option value="OTHER">OTHER</option>
     </select>
 
@@ -981,8 +981,8 @@
     /* =========================
        CONFIG / CONSTANTS
     ========================= */
-    const WORKER_URL = "https://mredtech01.edreborn86.workers.dev/";
-    const OCR_WORKER_URL = "https://secure-entry-vision01.edreborn86.workers.dev";
+    const WORKER_URL = "https://m-panora.edreborn86.workers.dev/";
+    const OCR_WORKER_URL = "https://secure-entry-vision06.edreborn86.workers.dev";
 
     // Preview display ratio used by adjustPreviewSize() (maxHeight = width * ratio)
     const PREVIEW_MAX_RATIO = 0.78;
@@ -1139,7 +1139,7 @@
     }
 
     function drawWatermarkOnCanvas(ctx, w, h){
-      const text = "SENSORY USE ONLY";
+      const text = "M PANORA USE ONLY";
       ctx.save();
       ctx.translate(w * 0.5, h * 0.5);
       ctx.rotate(-40 * Math.PI / 180);
