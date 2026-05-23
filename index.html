@@ -899,7 +899,6 @@
     <select id="streetName" name="streetName" required>
       <option value="" disabled selected hidden>-PLEASE SELECT-</option>
       <option value="JALAN M PANORA 1/1">JALAN M PANORA 1/1</option>
-      <option value="JALAN M PANORA 1/2">JALAN M PANORA 1/2</option>
     </select>
 
     <label for="unitNumber">UNIT NUMBER</label>
@@ -2621,19 +2620,17 @@
         try { updateCallLink(); } catch(e) {}
       }
 
-      if (data.unitNumber) {
-        const unitEl = document.getElementById('unitNumber');
+      // M PANORA: Do not autofill street name / unit number on RECORD FOUND.
+      // Rider destination may be different for every entry.
         const streetEl = document.getElementById('streetName');
-        const unitParts = splitMPanoraUnitNumber(data.unitNumber);
+        if (streetEl) {
+          streetEl.value = "";
+        try { setSelectPlaceholder(streetEl); } catch (e) {}
+      }
 
-        if (streetEl && unitParts.streetName) {
-          streetEl.value = unitParts.streetName;
-          setSelectPlaceholder(streetEl);
-        }
-
+        const unitEl = document.getElementById('unitNumber');
         if (unitEl) {
-          unitEl.value = unitParts.unitNumber || String(data.unitNumber).toUpperCase();
-        }
+          unitEl.value = "";
       }
 
       if (data.remark) {
